@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="15dp"
+        android:background="@drawable/button_round"
+        android:backgroundTint="@color/white"
+        android:elevation="10dp">
+
+        <TextView
+            android:id="@+id/tvProductName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="물건명"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivImage"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/button_round"
+            android:scaleType="centerCrop"
+            android:clipToOutline="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvProductName" />
+<!--
+            android:backgroundTint="@color/gray"
+            android:backgroundTintMode="src_atop"-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:layout_marginLeft="30dp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivImage"
+            app:layout_constraintStart_toEndOf="@+id/ivImage"
+            app:layout_constraintTop_toTopOf="@+id/ivImage">
+
+            <TextView
+                android:id="@+id/tvPriceTagCheap"
+                android:layout_width="45dp"
+                android:layout_height="25dp"
+                android:background="@drawable/button_round"
+                android:backgroundTint="@color/light_mint"
+                android:backgroundTintMode="src_atop"
+                android:gravity="center"
+                android:text="@string/cheap"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvPriceTagMedium"
+                android:layout_width="45dp"
+                android:layout_height="25dp"
+                android:background="@drawable/button_round"
+                android:gravity="center"
+                android:text="@string/medium"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toTopOf="@+id/tvPriceTagExpensive"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvPriceTagCheap" />
+
+            <TextView
+                android:id="@+id/tvPriceTagExpensive"
+                android:layout_width="45dp"
+                android:layout_height="25dp"
+                android:background="@drawable/button_round"
+                android:backgroundTint="@color/dark_orange"
+                android:backgroundTintMode="src_atop"
+                android:gravity="center"
+                android:text="@string/expensive"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvPriceCheap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="저렴한 곳"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvPriceTagCheap"
+                app:layout_constraintStart_toEndOf="@+id/tvPriceTagCheap"
+                app:layout_constraintTop_toTopOf="@+id/tvPriceTagCheap" />
+
+            <TextView
+                android:id="@+id/tvPriceMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="아주아주 평범한 가격의 마트"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvPriceTagMedium"
+                app:layout_constraintStart_toEndOf="@+id/tvPriceTagMedium"
+                app:layout_constraintTop_toTopOf="@+id/tvPriceTagMedium" />
+
+            <TextView
+                android:id="@+id/tvPriceExpensive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="여기는 비싼 곳"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvPriceTagExpensive"
+                app:layout_constraintStart_toEndOf="@+id/tvPriceTagExpensive"
+                app:layout_constraintTop_toTopOf="@+id/tvPriceTagExpensive" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

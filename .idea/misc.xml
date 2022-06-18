@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/JHPro/study/Jangbogo-2022/app/src/main/res/drawable/button_round.xml" value="0.2225" />
+        <entry key="..\:/JHPro/study/Jangbogo-2022/app/src/main/res/drawable/menu_selector_color.xml" value="0.2225" />
+        <entry key="..\:/JHPro/study/Jangbogo-2022/app/src/main/res/drawable/round_button.xml" value="0.2265" />
+        <entry key="..\:/JHPro/study/Jangbogo-2022/app/src/main/res/layout-v31/item_record.xml" value="0.24947916666666667" />
+        <entry key="..\:/JHPro/study/Jangbogo-2022/app/src/main/res/layout/activity_login.xml" value="0.4" />
+        <entry key="..\:/JHPro/study/Jangbogo-2022/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/JHPro/study/Jangbogo-2022/app/src/main/res/layout/activity_main2.xml" value="0.24947916666666667" />
+        <entry key="..\:/JHPro/study/Jangbogo-2022/app/src/main/res/layout/activity_product_add.xml" value="0.24947916666666667" />
+        <entry key="..\:/JHPro/study/Jangbogo-2022/app/src/main/res/layout/activity_sign_up.xml" value="0.24947916666666667" />
+        <entry key="..\:/JHPro/study/Jangbogo-2022/app/src/main/res/layout/fragment_price.xml" value="0.264" />
+        <entry key="..\:/JHPro/study/Jangbogo-2022/app/src/main/res/layout/fragment_record.xml" value="0.24947916666666667" />
+        <entry key="..\:/JHPro/study/Jangbogo-2022/app/src/main/res/layout/fragment_setting.xml" value="0.23489583333333333" />
+        <entry key="..\:/JHPro/study/Jangbogo-2022/app/src/main/res/layout/item_price.xml" value="0.4" />
+        <entry key="..\:/JHPro/study/Jangbogo-2022/app/src/main/res/layout/item_record.xml" value="0.264" />
+        <entry key="..\:/JHPro/study/Jangbogo-2022/app/src/main/res/menu/main_menu.xml" value="0.24947916666666667" />
+        <entry key="..\:/JHPro/study/Jangbogo-2022/app/src/main/res/menu/main_menu_selecr.xml" value="0.24947916666666667" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

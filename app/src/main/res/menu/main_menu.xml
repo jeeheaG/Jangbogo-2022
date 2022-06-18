@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--    id값은 어떤 항목을 선택했는지 구분하기 위해 NaviActivity.kt에서 사용-->
+    <item
+        android:id="@+id/fragmentPrice"
+        android:title="물가 검색"
+        android:icon="@drawable/ic_price"/>
+    <item
+        android:id="@+id/fragmentRecord"
+        android:title="기록"
+        android:icon="@drawable/ic_record"/>
+<!--
+        android:checked="true"-->
+    <item
+        android:id="@+id/fragmentSetting"
+        android:title="설정"
+        android:icon="@drawable/ic_settings"/>
+</menu>
