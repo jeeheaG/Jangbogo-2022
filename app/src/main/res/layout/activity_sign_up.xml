@@ -14,7 +14,7 @@
         app:layout_constraintTop_toTopOf="parent" >
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/ivBack"
@@ -112,41 +112,43 @@
                 app:layout_constraintEnd_toEndOf="@+id/etSignUpEmail"
                 app:layout_constraintStart_toStartOf="@+id/etSignUpEmail"
                 app:layout_constraintTop_toTopOf="@+id/tvSignUpPasswordCheck" />
+
+            <CheckBox
+                android:id="@+id/cbSignUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="20dp"
+                android:text="서비스 이용약관 및 개인정보처리방침에 동의합니다."
+                android:textColor="@color/gray"
+                android:textSize="12dp"
+                app:layout_constraintTop_toBottomOf="@+id/etSignUpPasswordCheck"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <Button
+                android:id="@+id/btnSignUp"
+                android:layout_width="140dp"
+                android:layout_height="65dp"
+                android:background="@drawable/button_round"
+                android:text="회원가입"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginTop="100dp"
+                android:layout_marginBottom="30dp"
+                app:layout_constraintTop_toBottomOf="@+id/cbSignUp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="0.7" />
+<!--            회원강비 버튼 margin 약간 맘에 안들지만.. 잘 모르겠지만.. 타협-->
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        <CheckBox
-            android:id="@+id/cbSignUp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:text="서비스 이용약관 및 개인정보처리방침에 동의합니다."
-            android:textColor="@color/gray"
-            android:textSize="12dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/clSignUp" />
-
-        <Button
-            android:id="@+id/btnSignUp"
-            android:layout_width="140dp"
-            android:layout_height="65dp"
-            android:background="@drawable/button_round"
-            android:text="회원가입"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cbSignUp"
-            app:layout_constraintBottom_toBottomOf="parent"/>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
     </ScrollView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
