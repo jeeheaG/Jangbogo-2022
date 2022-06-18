@@ -14,54 +14,46 @@
         android:elevation="10dp"
         android:paddingHorizontal="20dp"
         android:paddingVertical="10dp">
-        <TextView
-            android:id="@+id/tvPriceItemDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="2000-01-01"
-            android:textSize="12dp"
-            android:textColor="@color/dark_brown"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
-            android:id="@+id/tvPriceItemStore"
+            android:id="@+id/tvProductDetailStore"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
             android:text="어디어디 마트이름"
             android:textColor="@color/black"
             android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="@+id/tvPriceItemDate"
-            app:layout_constraintTop_toBottomOf="@+id/tvPriceItemDate" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvPriceItemProduct"
+            android:id="@+id/tvProductDetailItemMemo"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="과일뫄뫄"
+            android:text="질은 어쩌구지만 값은 어쩌구다"
             android:textColor="@color/black"
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tvPriceItemStore"
-            app:layout_constraintTop_toBottomOf="@+id/tvPriceItemStore" />
+            app:layout_constraintStart_toStartOf="@+id/tvProductDetailStore"
+            app:layout_constraintTop_toBottomOf="@+id/tvProductDetailStore" />
 
         <TextView
-            android:id="@+id/tvPriceItemUnit"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:gravity="right"
-            android:text="00개"
+            android:id="@+id/tvProductDetailTag"
+            android:layout_width="45dp"
+            android:layout_height="25dp"
+            android:background="@drawable/button_round"
+            android:backgroundTint="@color/light_mint"
+            android:backgroundTintMode="src_atop"
+            android:gravity="center"
+            android:text="@string/cheap"
             android:textColor="@color/black"
-            android:textSize="15sp"
+            android:textSize="13sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvPriceItemDate" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvPriceItemPrice"
-            android:layout_width="120dp"
+            android:id="@+id/tvProductDetailPrice"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:gravity="right"
@@ -69,8 +61,8 @@
             android:textColor="@color/black"
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/tvPriceItemUnit"
-            app:layout_constraintTop_toBottomOf="@+id/tvPriceItemUnit" />
+            app:layout_constraintEnd_toEndOf="@+id/tvProductDetailTag"
+            app:layout_constraintTop_toBottomOf="@+id/tvProductDetailTag" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

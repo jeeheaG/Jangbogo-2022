@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.jangbogo_2022.databinding.ItemPriceBinding
 import com.example.jangbogo_2022.model.ModelPriceSearch
+import java.text.DecimalFormat
 
 class PriceViewHolder(val binding: ItemPriceBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -17,10 +18,13 @@ class PriceSearchAdapter(val data: ArrayList<ModelPriceSearch>) : RecyclerView.A
         val binding = (holder as PriceViewHolder).binding
         val d = data[position]
 
-        binding.tvPriceStore.text = d.store
-        binding.tvPriceProduct.text = d.product
-        binding.tvPriceUnit.text = d.unit
-        binding.tvPricePrice.text = d.price
+        binding.tvPriceItemDate.text = d.date
+        binding.tvPriceItemStore.text = d.store
+        binding.tvPriceItemProduct.text = d.product
+        binding.tvPriceItemUnit.text = d.unit
+
+        val dec = DecimalFormat("#,###")
+        binding.tvPriceItemPrice.text = "${dec.format(d.price)}원"
     }
 
     override fun getItemCount(): Int {

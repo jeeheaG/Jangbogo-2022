@@ -11,12 +11,88 @@
         android:id="@+id/tvSettingTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="설정"
-        android:textSize="20sp"
-        android:textColor="@color/black"
         android:layout_marginTop="40dp"
+        android:text="설정"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSettingTitle">
+
+        <ImageView
+            android:id="@+id/ivSettingLogOut"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_logout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/mid_orange" />
+        <TextView
+            android:id="@+id/tvSettingLogOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="로그아웃"
+            android:textColor="@color/dark_brown"
+            android:textSize="15sp"
+            app:layout_constraintLeft_toRightOf="@+id/ivSettingLogOut"
+            app:layout_constraintTop_toTopOf="@+id/ivSettingLogOut"
+            app:layout_constraintBottom_toBottomOf="@+id/ivSettingLogOut"/>
+
+        <ImageView
+            android:id="@+id/ivSettingContact"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/ic_contact"
+            app:layout_constraintStart_toStartOf="@+id/ivSettingLogOut"
+            app:layout_constraintTop_toBottomOf="@+id/ivSettingLogOut"
+            app:tint="@color/mid_orange" />
+        <TextView
+            android:id="@+id/tvSettingContact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="개발자 문의"
+            android:textColor="@color/dark_brown"
+            android:textSize="15sp"
+            app:layout_constraintLeft_toRightOf="@+id/ivSettingContact"
+            app:layout_constraintTop_toTopOf="@+id/ivSettingContact"
+            app:layout_constraintBottom_toBottomOf="@+id/ivSettingContact"/>
+
+        <ImageView
+            android:id="@+id/ivSettingPolicy"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/ic_logout"
+            app:layout_constraintStart_toStartOf="@+id/ivSettingContact"
+            app:layout_constraintTop_toBottomOf="@+id/ivSettingContact"
+            app:tint="@color/mid_orange" />
+        <TextView
+            android:id="@+id/tvSettingPolicy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="이용약관 및 개인정보처리방침"
+            android:textColor="@color/dark_brown"
+            android:textSize="15sp"
+            app:layout_constraintLeft_toRightOf="@+id/ivSettingPolicy"
+            app:layout_constraintTop_toTopOf="@+id/ivSettingPolicy"
+            app:layout_constraintBottom_toBottomOf="@+id/ivSettingPolicy"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

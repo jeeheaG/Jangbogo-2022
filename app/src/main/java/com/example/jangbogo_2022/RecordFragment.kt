@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.jangbogo_2022.adapter.RecordAdapter
 import com.example.jangbogo_2022.databinding.FragmentRecordBinding
@@ -47,15 +48,23 @@ class RecordFragment : Fragment() {
         }
 
         val dummy = arrayListOf<ModelRecordCard>(
-            ModelRecordCard("사과1", "https://bit.ly/3yAt3za", "동네 슈퍼1", "하나로마트", "노원 신세계"),
-            ModelRecordCard("사과2", "https://bit.ly/3yAt3za", "동네 슈퍼", "하나로마트2", "노원 신세계"),
-            ModelRecordCard("사과3", "https://bit.ly/3yAt3za", "동네 슈퍼", "하나로마트", "노원 신세계3"),
-            ModelRecordCard("사과4", "https://bit.ly/3yAt3za", "동네 슈퍼", "하나로마트", "노원 신세계3"),
-            ModelRecordCard("사과5", "https://bit.ly/3yAt3za", "동네 슈퍼", "하나로마트", "노원 신세계3"),
+            ModelRecordCard("a", "사과1", "https://bit.ly/3yAt3za", "동네 슈퍼1", "하나로마트", "노원 신세계"),
+            ModelRecordCard("b", "사과2", "https://bit.ly/3yAt3za", "동네 슈퍼", "하나로마트2", "노원 신세계"),
+            ModelRecordCard("c", "사과3", "https://bit.ly/3yAt3za", "동네 슈퍼", "하나로마트", "노원 신세계3"),
+            ModelRecordCard("d", "사과4", "https://bit.ly/3yAt3za", "동네 슈퍼", "하나로마트", "노원 신세계3"),
+            ModelRecordCard("e", "사과5", "https://bit.ly/3yAt3za", "동네 슈퍼", "하나로마트", "노원 신세계3"),
 
             )
 
-        binding.rvRecord.adapter = RecordAdapter(dummy)
+        val recordAdapter = RecordAdapter(dummy){ ModelRecordCard ->
+//            Toast.makeText(activity, "ItemClicked: ${ModelRecordCard.name}", Toast.LENGTH_SHORT).show()
+            val productDetailIntent = Intent(activity, ProductDetailActivity::class.java)
+            productDetailIntent.putExtra("id", ModelRecordCard.productId)
+            productDetailIntent.putExtra("name", ModelRecordCard.name)
+            startActivity(productDetailIntent)
+        }
+
+        binding.rvRecord.adapter = recordAdapter
         binding.rvRecord.layoutManager = LinearLayoutManager(activity)
 
 

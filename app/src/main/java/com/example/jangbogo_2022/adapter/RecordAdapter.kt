@@ -10,7 +10,7 @@ import com.example.jangbogo_2022.model.ModelRecordCard
 
 class RecordViewHolder(val binding: ItemRecordBinding) : RecyclerView.ViewHolder(binding.root)
 
-class RecordAdapter(val data: ArrayList<ModelRecordCard>) : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
+class RecordAdapter(val data: ArrayList<ModelRecordCard>, val itemClick: (ModelRecordCard) -> Unit) : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
     private lateinit var context: Context
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -35,6 +35,12 @@ class RecordAdapter(val data: ArrayList<ModelRecordCard>) : RecyclerView.Adapter
         binding.tvPriceCheap.text = d.cheap
         binding.tvPriceMedium.text = d.medium
         binding.tvPriceExpensive.text = d.expensive
+
+        //클릭리스너 달기
+        binding.clRecordItem.setOnClickListener{
+            itemClick(data[position])
+        }
+
     }
 
     override fun getItemCount(): Int {

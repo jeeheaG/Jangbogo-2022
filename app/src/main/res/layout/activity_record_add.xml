@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecordAddActivity">
+
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvRecordAddTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="기록 추가"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clRecordAddInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRecordAddTitle">
+
+
+        <LinearLayout
+            android:id="@+id/llRecordAddSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="50dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/clRecordAddInput">
+            <TextView
+                android:id="@+id/tvRecordAddSubtitleName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="뫄뫄 과일"
+                android:textColor="@color/dark_brown"
+                android:textSize="15sp"/>
+            <TextView
+                android:id="@+id/tvRecordAddSubtitleMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="에 대한 기록을 추가합니다."
+                android:textColor="@color/dark_brown"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvRecordAddStore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="가게명"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llRecordAddSubtitle" />
+
+        <EditText
+            android:id="@+id/etProductAddName"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:backgroundTint="@color/dark_orange"
+            android:inputType="textEmailAddress"
+            android:singleLine="true"
+            app:layout_constraintBottom_toBottomOf="@+id/tvRecordAddStore"
+            app:layout_constraintStart_toEndOf="@+id/tvRecordAddStore"
+            app:layout_constraintTop_toTopOf="@+id/tvRecordAddStore" />
+
+        <TextView
+            android:id="@+id/tvRecordAddPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="가격"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintLeft_toLeftOf="@+id/tvRecordAddStore"
+            app:layout_constraintTop_toBottomOf="@+id/tvRecordAddStore" />
+
+        <EditText
+            android:id="@+id/etRecordAddPrice"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/dark_orange"
+            android:inputType="textEmailAddress"
+            android:singleLine="true"
+            app:layout_constraintBottom_toBottomOf="@+id/tvRecordAddPrice"
+            app:layout_constraintStart_toStartOf="@+id/etProductAddName"
+            app:layout_constraintTop_toTopOf="@+id/tvRecordAddPrice" />
+
+        <TextView
+            android:id="@+id/tvRecordAddTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="가격대"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintLeft_toLeftOf="@+id/tvRecordAddPrice"
+            app:layout_constraintTop_toBottomOf="@+id/tvRecordAddPrice" />
+
+        <TextView
+            android:id="@+id/tvRecordAddTagCheap"
+            android:layout_width="45dp"
+            android:layout_height="25dp"
+            android:background="@drawable/button_round_stroke"
+            android:backgroundTint="@color/light_mint"
+            android:backgroundTintMode="src_in"
+            android:gravity="center"
+            android:text="@string/cheap"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvRecordAddTag"
+            app:layout_constraintStart_toStartOf="@+id/etRecordAddMemo"
+            app:layout_constraintTop_toTopOf="@+id/tvRecordAddTag" />
+
+
+        <TextView
+            android:id="@+id/tvRecordAddTagMedium"
+            android:layout_width="45dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/button_round_stroke"
+            android:backgroundTint="@color/mid_yellow"
+            android:backgroundTintMode="src_atop"
+            android:gravity="center"
+            android:text="@string/medium"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvRecordAddTagCheap"
+            app:layout_constraintStart_toEndOf="@+id/tvRecordAddTagCheap"
+            app:layout_constraintTop_toTopOf="@+id/tvRecordAddTagCheap" />
+
+
+        <TextView
+            android:id="@+id/tvRecordAddTagExpensive"
+            android:layout_width="45dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/button_round_stroke"
+            android:backgroundTint="@color/dark_orange"
+            android:backgroundTintMode="src_atop"
+            android:gravity="center"
+            android:text="@string/expensive"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvRecordAddTagMedium"
+            app:layout_constraintStart_toEndOf="@+id/tvRecordAddTagMedium"
+            app:layout_constraintTop_toTopOf="@+id/tvRecordAddTagMedium" />
+
+
+        <TextView
+            android:id="@+id/tvRecordAddMemo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="메모"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintLeft_toLeftOf="@+id/tvRecordAddTag"
+            app:layout_constraintTop_toBottomOf="@+id/tvRecordAddTag" />
+
+        <EditText
+            android:id="@+id/etRecordAddMemo"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/dark_orange"
+            android:inputType="textEmailAddress"
+            android:singleLine="true"
+            app:layout_constraintBottom_toBottomOf="@+id/tvRecordAddMemo"
+            app:layout_constraintStart_toStartOf="@+id/etRecordAddPrice"
+            app:layout_constraintTop_toTopOf="@+id/tvRecordAddMemo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btnRecordAdd"
+        android:layout_width="140dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/button_round"
+        android:text="추가하기"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clRecordAddInput"
+        app:layout_constraintVertical_bias="0.8" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
