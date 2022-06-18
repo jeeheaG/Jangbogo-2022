@@ -3,7 +3,7 @@
 <!--    <style name="Theme.Jangbogo2022" parent="Theme.MaterialComponents.DayNight.NoActionBar">-->
     <style name="Theme.Jangbogo2022" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">@color/light_orange</item>
 <!--        <item name="colorPrimaryVariant">@color/purple_700</item>-->
         <item name="colorPrimaryVariant">@color/light_brown</item>
         <item name="colorOnPrimary">@color/white</item>
