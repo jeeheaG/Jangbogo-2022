@@ -1,11 +1,16 @@
 package com.example.jangbogo_2022
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.jangbogo_2022.databinding.FragmentSettingBinding
+import com.example.jangbogo_2022.network.MyApplication
+import com.kakao.sdk.user.UserApiClient
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -36,8 +41,48 @@ class SettingFragment : Fragment() {
     ): View? {
         val binding = FragmentSettingBinding.inflate(inflater, container, false)
 
+        //사용자 설정
+        binding.tvSettingOption.setOnClickListener {
+            val mySettingIntent = Intent(activity, MySettingActivity::class.java)
+            startActivity(mySettingIntent)
+//            activity?.finish()
+        }
 
 
+        //로그아웃 버튼 클릭
+        binding.tvSettingLogOut.setOnClickListener {
+            //이메일 로그인 상태라면
+            if(MyApplication.auth.currentUser != null){
+                Log.d("jh", "로그인되었던 email : ${MyApplication.email}")
+                Log.d("jh", "로그인되었던 uid : ${MyApplication.auth.uid}")
+
+                //Firebase 로그아웃
+                MyApplication.auth.signOut()
+                MyApplication.email = null
+                Log.d("jh", "uid : ${MyApplication.auth.uid}")
+                Toast.makeText(activity?.applicationContext, "이메일 로그아웃 되었습니다.", Toast.LENGTH_SHORT).show()
+            }
+
+            //카카오 로그인 상태라면
+            UserApiClient.instance.me { user, error ->
+                if (user != null){
+                    //kakao 로그아웃
+                    UserApiClient.instance.logout { error ->
+                        if(error != null){
+                            Toast.makeText(activity, "카카오 로그아웃에 실패했습니다.", Toast.LENGTH_SHORT).show()
+                            Log.d("jh", "카카오 로그아웃 실패")
+                        }else{
+                            Toast.makeText(activity, "카카오 로그아웃되었습니다.", Toast.LENGTH_SHORT).show()
+                            Log.d("jh", "카카오 로그아웃 성공")
+                        }
+                    }
+                }
+            }
+
+            val loginIntent = Intent(activity, LoginActivity::class.java)
+            startActivity(loginIntent)
+            activity?.finish()
+        }
 
 
 

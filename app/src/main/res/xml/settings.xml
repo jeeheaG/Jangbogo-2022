@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--    Shared Preference -->
+    <!--    스위치를 이용한 값-->
+    <!--    그룹으로 묶을 수 있음-->
+    <PreferenceCategory
+        app:key="notification"
+        app:title="금액 표시 옵션">
+        <SwitchPreference
+            app:key="comma"
+            android:defaultValue="true"
+            app:title="1000단위 쉼표"/>
+        <SwitchPreferenceCompat
+            app:key="won"
+            app:title="기호로 단위 표시 (￦)"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:key="etc"
+        app:title="기타 설정">
+        <EditTextPreference
+            app:key="keywordSave"
+            app:title="가게명 검색어 저장"/>
+
+        <!--    리스트선택 - values의 arrays의 값 사용함-->
+        <ListPreference
+            app:key="tagColor"
+            app:title="배경 색상 선택"
+            android:entries="@array/my_color"
+            app:entryValues="@array/my_color_value"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

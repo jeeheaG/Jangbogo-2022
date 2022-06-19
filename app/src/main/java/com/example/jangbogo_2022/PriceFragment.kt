@@ -1,6 +1,8 @@
 package com.example.jangbogo_2022
 
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.text.Editable
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +10,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
+import androidx.preference.PreferenceManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.jangbogo_2022.adapter.PriceSearchAdapter
 import com.example.jangbogo_2022.databinding.FragmentPriceBinding
@@ -31,10 +35,12 @@ private const val ARG_PARAM2 = "param2"
  */
 class PriceFragment : Fragment() {
     // TODO: Rename and change types of parameters
+    private lateinit var binding: FragmentPriceBinding
     private var param1: String? = null
     private var param2: String? = null
     private var priceData: ArrayList<ModelPriceSearch> = arrayListOf<ModelPriceSearch>()
-    private val priceAdapter = PriceSearchAdapter(priceData)
+    private lateinit var priceAdapter: PriceSearchAdapter
+    private var sharedPreferences: SharedPreferences? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,14 +54,23 @@ class PriceFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = FragmentPriceBinding.inflate(inflater, container, false)
+        binding = FragmentPriceBinding.inflate(inflater, container, false)
 
-        var store = ""
+        //sharedPreferences
+        sharedPreferences = activity?.let { PreferenceManager.getDefaultSharedPreferences(it) }
+        val isComma = sharedPreferences?.getBoolean("comma", true) ?: true
+        val isWonW = sharedPreferences?.getBoolean("won", false) ?: false
+        val isKeyword = sharedPreferences?.getString("keywordSave", "") ?: ""
+
+        priceAdapter = PriceSearchAdapter(priceData, isComma, isWonW)
+
+        var store = isKeyword
         var product = ""
         var yearMonth = "2022-05"
-        var address = ""
 
-        callPriceData(store, product, yearMonth, address)
+        callPriceData(store, product, yearMonth)
+
+        binding.etPriceStore.setText(isKeyword)
 
         var thisYear = 2022
         val yearItems: ArrayList<String> = arrayListOf("-")
@@ -82,13 +97,19 @@ class PriceFragment : Fragment() {
         binding.spPriceYear.prompt = "물가 점검 연도를 선택하세요."
         binding.spPriceMonth.prompt = "물가 점검 월을 선택하세요."
 
+
+//
+//        binding.btnPriceKeywordSave.setOnClickListener {
+//            Toast.makeText(activity, "현재 검색어가 저장되었습니다.", Toast.LENGTH_SHORT).show()
+//
+//        }
+
         binding.btnPriceSearch.setOnClickListener {
             store = binding.etPriceStore.text.toString()
             product = binding.etPriceProduct.text.toString()
-            address = binding.etPriceAddress.text.toString()
             yearMonth = binding.spPriceYear.selectedItem.toString() + "-" + binding.spPriceMonth.selectedItem.toString()
 
-            callPriceData(store, product, yearMonth, address)
+            callPriceData(store, product, yearMonth)
         }
 
 /*        binding.spPriceYear.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
@@ -116,16 +137,47 @@ class PriceFragment : Fragment() {
         // Inflate the layout for this fragment
         return binding.root
     }
+/*
 
-    private fun callPriceData(store: String, product: String, yearMonth: String, address: String) {
+    override fun onResume() {
+        super.onResume()
+        sharedPreferences = activity?.let { PreferenceManager.getDefaultSharedPreferences(it) }
+        val isComma = sharedPreferences?.getBoolean("comma", true) ?: true
+        Log.d("jh", "onResume, isComma : ${isComma}")
+
+    }
+
+    override fun onPause() {
+        super.onPause()
+        sharedPreferences = activity?.let { PreferenceManager.getDefaultSharedPreferences(it) }
+        val isComma = sharedPreferences?.getBoolean("comma", true) ?: true
+        Log.d("jh", "onPause, isComma : ${isComma}")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        //sharedPreferences
+        sharedPreferences = activity?.let { PreferenceManager.getDefaultSharedPreferences(it) }
+        val isComma = sharedPreferences?.getBoolean("comma", true) ?: true
+        val isWonW = sharedPreferences?.getBoolean("won", false) ?: false
+        val isKeyword = sharedPreferences?.getString("keyword", "") ?: ""
+        Log.d("jh", "onStop, isComma : ${isComma}")
+
+        priceAdapter = PriceSearchAdapter(priceData, isComma, isWonW)
+//        priceAdapter.notifyDataSetChanged()
+
+        binding.etPriceStore.setText(isKeyword)
+    }
+*/
+
+    private fun callPriceData(store: String, product: String, yearMonth: String) {
         val call: Call<ModelDataPrice>? = MyApplication.networkService.getPriceData(
             "54425375706a65653332716f625968",
             1,
             100,
             store,
             product,
-            yearMonth,
-            address
+            yearMonth
         )
 
         call?.enqueue(object : Callback<ModelDataPrice>{

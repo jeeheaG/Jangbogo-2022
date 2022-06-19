@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="my_color">
+        <item>하얀색</item>
+        <item>연갈색</item>
+    </string-array>
+    <string-array name="my_color_value">
+        <item>#FFFFFFFF</item>
+        <item>#BBA17D</item>
+    </string-array>
+</resources>

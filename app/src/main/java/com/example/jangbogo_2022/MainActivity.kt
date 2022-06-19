@@ -1,11 +1,14 @@
 package com.example.jangbogo_2022
 
+import android.content.SharedPreferences
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import androidx.preference.PreferenceManager
 import com.example.jangbogo_2022.databinding.ActivityMainBinding
 
 private const val TAG_PRICE = "price"
@@ -14,11 +17,18 @@ private const val TAG_SETTING = "setting"
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+
+        var bgColor = sharedPreferences.getString("tagColor", "#FFFFFFFF") // MySettingFragment에서 선택된 값을 가져옴!!
+        binding.llMainActivity.setBackgroundColor(Color.parseColor((bgColor)))
 
         //맨 처음 보여줄 프래그먼트 설정
         setFragment(TAG_RECORD, RecordFragment())
@@ -53,35 +63,35 @@ class MainActivity : AppCompatActivity() {
         }
 
         //작업이 수월하도록 manager에 add되어있는 fragment들을 변수로 할당해둠
-        val category = manager.findFragmentByTag(TAG_PRICE)
-        val home = manager.findFragmentByTag(TAG_RECORD)
-        val myPage = manager.findFragmentByTag(TAG_SETTING)
+        val price = manager.findFragmentByTag(TAG_PRICE)
+        val record = manager.findFragmentByTag(TAG_RECORD)
+        val setting = manager.findFragmentByTag(TAG_SETTING)
 
         //모든 프래그먼트 hide
-        if(category!=null){
-            ft.hide(category)
+        if(price!=null){
+            ft.hide(price)
         }
-        if(home!=null){
-            ft.hide(home)
+        if(record!=null){
+            ft.hide(record)
         }
-        if(myPage!=null){
-            ft.hide(myPage)
+        if(setting!=null){
+            ft.hide(setting)
         }
 
         //선택한 항목에 따라 그에 맞는 프래그먼트만 show
         if(tag == TAG_PRICE){
-            if(category!=null){
-                ft.show(category)
+            if(price!=null){
+                ft.show(price)
             }
         }
         else if(tag == TAG_RECORD){
-            if(home!=null){
-                ft.show(home)
+            if(record!=null){
+                ft.show(record)
             }
         }
         else if(tag == TAG_SETTING){
-            if(myPage!=null){
-                ft.show(myPage)
+            if(setting!=null){
+                ft.show(setting)
             }
         }
 
@@ -90,4 +100,16 @@ class MainActivity : AppCompatActivity() {
         //ft.commit()
 
     }//seFragment함수 끝
+
+    override fun onResume() {
+        super.onResume()
+       // 배경색 변경
+        val bgColor = sharedPreferences.getString("tagColor", "#FFFFFFFF")
+        binding.llMainActivity.setBackgroundColor(Color.parseColor((bgColor)))
+
+        val manager: FragmentManager = supportFragmentManager
+        val ft: FragmentTransaction = manager.beginTransaction()
+        manager.findFragmentByTag(TAG_PRICE)?.let { ft.remove(it) }
+        ft.commit()
+    }
 }

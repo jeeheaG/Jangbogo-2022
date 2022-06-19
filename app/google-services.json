@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "979805215286",
+    "project_id": "jangbogo-2022",
+    "storage_bucket": "jangbogo-2022.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:979805215286:android:e2428bd65706eca4125697",
+        "android_client_info": {
+          "package_name": "com.example.jangbogo_2022"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "979805215286-322pen4eqmael1f8fh30d589t54m80ik.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.jangbogo_2022",
+            "certificate_hash": "565ede3792adb53590ae5bdb513b13fc8e056df1"
+          }
+        },
+        {
+          "client_id": "979805215286-2mvahi30lfca224klcvomklsiqfp4d0p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABlOU3_RjMe8FbPP_hsfocGj8cyjwQdB0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "979805215286-2mvahi30lfca224klcvomklsiqfp4d0p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

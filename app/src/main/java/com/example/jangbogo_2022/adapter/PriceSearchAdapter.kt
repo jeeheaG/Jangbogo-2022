@@ -9,7 +9,7 @@ import java.text.DecimalFormat
 
 class PriceViewHolder(val binding: ItemPriceBinding) : RecyclerView.ViewHolder(binding.root)
 
-class PriceSearchAdapter(val data: ArrayList<ModelPriceSearch>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class PriceSearchAdapter(val data: ArrayList<ModelPriceSearch>, val isComma: Boolean, val isWonW: Boolean) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return PriceViewHolder(ItemPriceBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
@@ -23,8 +23,18 @@ class PriceSearchAdapter(val data: ArrayList<ModelPriceSearch>) : RecyclerView.A
         binding.tvPriceItemProduct.text = d.product
         binding.tvPriceItemUnit.text = d.unit
 
-        val dec = DecimalFormat("#,###")
-        binding.tvPriceItemPrice.text = "${dec.format(d.price)}원"
+        var won = "원"
+        if(isWonW){
+            won = "￦"
+        }
+
+        if(isComma){
+            val dec = DecimalFormat("#,###")
+            binding.tvPriceItemPrice.text = dec.format(d.price) + won
+        }
+        else{
+            binding.tvPriceItemPrice.text = d.price.toString() + won
+        }
     }
 
     override fun getItemCount(): Int {

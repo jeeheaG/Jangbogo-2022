@@ -16,7 +16,7 @@ import java.text.DecimalFormat
 
 class ProductDetailViewHolder(val binding: ItemProductDetailBinding) : RecyclerView.ViewHolder(binding.root)
 
-class ProductDetailAdapter(val data: ArrayList<ModelProductDetail>) : RecyclerView.Adapter<RecyclerView.ViewHolder>()  {
+class ProductDetailAdapter(val data: ArrayList<ModelProductDetail>, val isComma: Boolean, val isWonW: Boolean) : RecyclerView.Adapter<RecyclerView.ViewHolder>()  {
     private lateinit var context: Context
     private lateinit var priceLevelString: ArrayList<String>
     private lateinit var priceLevelColor: ArrayList<Int>
@@ -38,8 +38,18 @@ class ProductDetailAdapter(val data: ArrayList<ModelProductDetail>) : RecyclerVi
         binding.tvProductDetailTag.text = priceLevelString[d.tag] //tag값 0 1 2에 따라 string값 설정
         DrawableCompat.setTint(binding.tvProductDetailTag.background, priceLevelColor[d.tag]) //color값 설정
 
-        val dec = DecimalFormat("#,###")
-        binding.tvProductDetailPrice.text = "${dec.format(d.price)}원"
+        var won = "원"
+        if(isWonW){
+            won = "￦"
+        }
+
+        if(isComma){
+            val dec = DecimalFormat("#,###")
+            binding.tvProductDetailPrice.text = dec.format(d.price) + won
+        }
+        else{
+            binding.tvProductDetailPrice.text = d.price.toString() + won
+        }
     }
 
     override fun getItemCount(): Int {
