@@ -75,7 +75,7 @@
             app:layout_constraintTop_toBottomOf="@+id/llRecordAddSubtitle" />
 
         <EditText
-            android:id="@+id/etProductAddName"
+            android:id="@+id/etRecordAddName"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
@@ -105,7 +105,7 @@
             android:inputType="textEmailAddress"
             android:singleLine="true"
             app:layout_constraintBottom_toBottomOf="@+id/tvRecordAddPrice"
-            app:layout_constraintStart_toStartOf="@+id/etProductAddName"
+            app:layout_constraintStart_toStartOf="@+id/etRecordAddName"
             app:layout_constraintTop_toTopOf="@+id/tvRecordAddPrice" />
 
         <TextView
@@ -121,15 +121,15 @@
 
         <TextView
             android:id="@+id/tvRecordAddTagCheap"
-            android:layout_width="45dp"
-            android:layout_height="25dp"
+            android:layout_width="55dp"
+            android:layout_height="30dp"
             android:background="@drawable/button_round_stroke"
             android:backgroundTint="@color/light_mint"
             android:backgroundTintMode="src_in"
             android:gravity="center"
             android:text="@string/cheap"
             android:textColor="@color/black"
-            android:textSize="13sp"
+            android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="@+id/tvRecordAddTag"
             app:layout_constraintStart_toStartOf="@+id/etRecordAddMemo"
             app:layout_constraintTop_toTopOf="@+id/tvRecordAddTag" />
@@ -137,16 +137,16 @@
 
         <TextView
             android:id="@+id/tvRecordAddTagMedium"
-            android:layout_width="45dp"
-            android:layout_height="25dp"
+            android:layout_width="55dp"
+            android:layout_height="30dp"
             android:layout_marginLeft="20dp"
-            android:background="@drawable/button_round_stroke"
+            android:background="@drawable/button_round"
             android:backgroundTint="@color/mid_yellow"
             android:backgroundTintMode="src_atop"
             android:gravity="center"
             android:text="@string/medium"
             android:textColor="@color/black"
-            android:textSize="13sp"
+            android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="@+id/tvRecordAddTagCheap"
             app:layout_constraintStart_toEndOf="@+id/tvRecordAddTagCheap"
             app:layout_constraintTop_toTopOf="@+id/tvRecordAddTagCheap" />
@@ -154,8 +154,8 @@
 
         <TextView
             android:id="@+id/tvRecordAddTagExpensive"
-            android:layout_width="45dp"
-            android:layout_height="25dp"
+            android:layout_width="55dp"
+            android:layout_height="30dp"
             android:layout_marginLeft="20dp"
             android:background="@drawable/button_round_stroke"
             android:backgroundTint="@color/dark_orange"
@@ -163,7 +163,7 @@
             android:gravity="center"
             android:text="@string/expensive"
             android:textColor="@color/black"
-            android:textSize="13sp"
+            android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="@+id/tvRecordAddTagMedium"
             app:layout_constraintStart_toEndOf="@+id/tvRecordAddTagMedium"
             app:layout_constraintTop_toTopOf="@+id/tvRecordAddTagMedium" />

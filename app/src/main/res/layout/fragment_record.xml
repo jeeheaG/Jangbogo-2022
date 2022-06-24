@@ -49,7 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:text="물건 등록"
+        android:text="상품 추가"
         android:textColor="@color/white"
         android:theme="@style/FloatingButtonTheme"
         app:backgroundTint="@color/dark_orange"

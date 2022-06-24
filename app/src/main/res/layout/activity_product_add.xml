@@ -33,10 +33,65 @@
         android:layout_height="150dp"
         android:layout_marginTop="50dp"
         android:background="@drawable/button_round"
+        android:scaleType="fitXY"
         android:clipToOutline="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvProductAddTitle" />
+
+    <TextView
+        android:id="@+id/tvProductAddHow"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="사진 추가 방법 선택"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnProductAddCamera"
+        app:layout_constraintEnd_toEndOf="@+id/ivProductAdd"
+        app:layout_constraintStart_toStartOf="@+id/ivProductAdd"
+        app:layout_constraintTop_toTopOf="@+id/ivProductAdd" />
+
+    <Button
+        android:id="@+id/btnProductAddCamera"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/button_round"
+        android:backgroundTint="@color/dark_brown"
+        android:text="카메라 추가"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnProductAddGallery"
+        app:layout_constraintEnd_toEndOf="@+id/ivProductAdd"
+        app:layout_constraintStart_toStartOf="@+id/ivProductAdd" />
+
+    <Button
+        android:id="@+id/btnProductAddGallery"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button_round"
+        android:backgroundTint="@color/dark_brown"
+        android:text="갤러리 추가"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/ivProductAdd"
+        app:layout_constraintEnd_toEndOf="@+id/ivProductAdd"
+        app:layout_constraintStart_toStartOf="@+id/ivProductAdd" />
+
+
+    <!--    <ImageView-->
+<!--        android:id="@+id/ivProductAddIcon"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:src="@android:drawable/ic_input_add"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/ivProductAdd"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/ivProductAdd"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/ivProductAdd"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/ivProductAdd"-->
+<!--        app:tint="@color/dark_brown" />-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"

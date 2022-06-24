@@ -84,7 +84,10 @@ class SettingFragment : Fragment() {
             activity?.finish()
         }
 
-
+        binding.tvSettingContact.setOnClickListener {
+            val contactIntent = Intent(activity, ContactActivity::class.java)
+            startActivity(contactIntent)
+        }
 
 
 

@@ -4,6 +4,8 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.widget.Toast
 import com.example.jangbogo_2022.databinding.ActivityLoginBinding
@@ -140,17 +142,20 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
-        binding.tvLoginAsk.setOnClickListener { 
-            //TODO : 개발자 문의 페이지로
+        binding.tvLoginAsk.setOnClickListener {
+            val contactIntent = Intent(this, ContactActivity::class.java)
+            startActivity(contactIntent)
         }
         
         
     }
 
     private fun loginCompleteMoveMain() {
-        val mainIntent = Intent(this, MainActivity::class.java)
-        startActivity(mainIntent)
-        finish()
+        Handler(Looper.getMainLooper()).postDelayed({
+            val mainIntent = Intent(this, MainActivity::class.java)
+            startActivity(mainIntent)
+            finish()
+        }, 1000)
     }
 
     private fun callFirebaseEmailLogin(email: String, password: String) {
@@ -184,7 +189,7 @@ class LoginActivity : AppCompatActivity() {
             }
         //TODO : 덕지덕지 코드...
         MyApplication.email = email
-        Toast.makeText(baseContext, "${MyApplication.auth.currentUser?.email}님 로그인 되었습니다.", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(baseContext, "${MyApplication.auth.currentUser?.email}님 로그인 되었습니다.", Toast.LENGTH_SHORT).show()
         loginCompleteMoveMain()
     }
 

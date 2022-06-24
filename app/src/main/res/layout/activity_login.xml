@@ -6,19 +6,76 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
+
+    <ImageView
+        android:id="@+id/ivLoginIcon"
+        android:layout_width="180dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="36dp"
+        android:src="@drawable/ic_shopping_cart"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/mid_orange" />
+
     <TextView
         android:id="@+id/tvLoginTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="36dp"
         android:text="장보고"
-        android:textSize="32sp"
         android:textColor="@color/black"
-        android:layout_marginTop="150dp"
+        android:textSize="32sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/ivLoginIcon"
+        app:layout_constraintTop_toTopOf="@+id/ivLoginIcon" />
+
+    <TextView
+        android:id="@+id/tvLoginSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:text="장보고, 기록하고"
+        android:textColor="@color/light_brown"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivLoginIcon"
+        app:layout_constraintTop_toBottomOf="@+id/tvLoginTitle" />
+    <TextView
+        android:id="@+id/tvLoginSubtitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:text="나와 가장 가까운"
+        android:textColor="@color/light_brown"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivLoginIcon"
+        app:layout_constraintTop_toBottomOf="@+id/tvLoginSubtitle" />
+    <TextView
+        android:id="@+id/tvLoginSubtitle3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:text="물가 기록 서비스"
+        android:textColor="@color/light_brown"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivLoginIcon"
+        app:layout_constraintTop_toBottomOf="@+id/tvLoginSubtitle2" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="5dp"
@@ -43,12 +100,12 @@
             android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="jeehea99@naver.com"
             android:backgroundTint="@color/dark_orange"
             android:inputType="textEmailAddress"
             android:singleLine="true"
             app:layout_constraintBottom_toTopOf="@+id/etLoginPassword"
             app:layout_constraintEnd_toEndOf="parent" />
+<!--        android:text="jeehea99@naver.com"-->
 
         <TextView
             android:id="@+id/tvLoginPassword"
@@ -66,13 +123,13 @@
             android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="000000"
             android:backgroundTint="@color/dark_orange"
             android:inputType="textPassword"
             android:singleLine="true"
             app:layout_constraintBottom_toTopOf="@+id/btnLoginLogin"
             app:layout_constraintEnd_toEndOf="parent" />
 
+<!--        android:text="000000"-->
         <Button
             android:id="@+id/btnLoginLogin"
             android:layout_width="240dp"
